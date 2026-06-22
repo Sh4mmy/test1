@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'dig1tal Blog',
+  description: 'ERP and CRM insights for UK businesses.',
+  url: 'https://www.dig1tal.io/blog',
+};
+
+const posts = [
+  {
+    title: 'How to Choose the Right ERP for Your UK Business in 2025',
+    excerpt: 'A practical guide to comparing ERP options based on finance, operations, reporting, integrations, and long-term flexibility.',
+    date: '10 June 2026',
+    category: 'ERP Strategy',
+  },
+  {
+    title: 'Making Tax Digital: What UK Businesses Need to Know',
+    excerpt: 'Understand how MTD changes finance processes and what your ERP and accounting integrations need to support.',
+    date: '28 May 2026',
+    category: 'Compliance',
+  },
+  {
+    title: 'CRM vs ERP: Which Does Your Business Need?',
+    excerpt: 'Learn when to prioritise CRM, when to invest in ERP, and why many UK businesses ultimately need both working together.',
+    date: '13 May 2026',
+    category: 'CRM & ERP',
+  },
+  {
+    title: '5 Signs Your Business Has Outgrown Spreadsheets',
+    excerpt: 'Spot the operational bottlenecks, reporting delays, and customer service risks that show it is time for a more connected platform.',
+    date: '24 April 2026',
+    category: 'Growth',
+  },
+];
+---
+
+<BaseLayout
+  title="ERP & CRM Insights for UK Businesses"
+  description="Read dig1tal articles on ERP, CRM, Making Tax Digital, and operational improvement for UK businesses evaluating modern systems."
+  jsonLd={jsonLd}
+>
+  <section class="bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-20 sm:py-24 lg:py-28">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary-600">Blog</p>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+        ERP &amp; CRM Insights for UK Businesses
+      </h1>
+      <p class="section-subheading">
+        Guidance, ideas, and practical advice for UK leaders reviewing ERP, CRM, finance integration, and operational change.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+        {posts.map((post) => (
+          <article class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+            <p class="inline-flex rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-700">{post.category}</p>
+            <h2 class="mt-4 text-xl font-semibold text-gray-900">{post.title}</h2>
+            <p class="mt-3 text-sm leading-7 text-gray-600">{post.excerpt}</p>
+            <p class="mt-6 text-sm text-gray-500">{post.date}</p>
+          </article>
+        ))}
+      </div>
+      <div class="mt-12 rounded-2xl bg-gray-50 p-8 text-center ring-1 ring-gray-100">
+        <h2 class="text-2xl font-semibold text-gray-900">Stay informed</h2>
+        <p class="mt-3 text-gray-600">Get future ERP and CRM insights for UK businesses delivered to your inbox.</p>
+        <a href="/contact" class="btn-secondary mt-6">Subscribe to our newsletter</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary-700 py-16 sm:py-20">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white sm:text-4xl">Want advice tailored to your business?</h2>
+      <p class="mt-4 text-lg text-primary-100">
+        Book a conversation with our UK team to discuss your ERP, CRM, and operational priorities.
+      </p>
+      <div class="mt-8">
+        <a href="/contact" class="btn-primary bg-white text-primary-700 hover:bg-primary-50">Book a demo</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.dig1tal.io/sitemap-index.xml
+
+# Disallow admin/app areas
+User-agent: *
+Disallow: /api/
+Disallow: /app/

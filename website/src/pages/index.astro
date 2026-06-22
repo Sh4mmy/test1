@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'dig1tal',
+  url: 'https://www.dig1tal.io',
+  logo: 'https://www.dig1tal.io/logo.png',
+  description: 'Modern ERP & CRM solutions for UK businesses',
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'GB',
+  },
+  sameAs: [
+    'https://linkedin.com/company/dig1tal',
+    'https://twitter.com/dig1talio',
+  ],
+};
+
+const features = [
+  {
+    title: 'Sales Pipeline Management',
+    description: 'Track leads through to conversion with visual Kanban boards and automated workflows.',
+    icon: '📊',
+  },
+  {
+    title: 'Integrated Communications',
+    description: 'Email, VoIP calling, and WhatsApp — all from one unified platform.',
+    icon: '📞',
+  },
+  {
+    title: 'UK Compliance Built-in',
+    description: 'GDPR-compliant, Making Tax Digital ready, with UK data residency.',
+    icon: '🛡️',
+  },
+  {
+    title: 'Real-time Collaboration',
+    description: 'Keep your entire team aligned with live updates, task assignments, and activity feeds.',
+    icon: '👥',
+  },
+  {
+    title: 'Powerful Integrations',
+    description: 'Connect with Xero, Sage, QuickBooks, and the tools UK businesses already use.',
+    icon: '🔗',
+  },
+  {
+    title: 'Open Source & Flexible',
+    description: 'No vendor lock-in. Customise everything to match your business processes.',
+    icon: '⚡',
+  },
+];
+
+const testimonials = [
+  {
+    quote: "dig1tal transformed how we manage our sales pipeline. We've seen a 40% increase in conversion rates since switching.",
+    author: 'Sarah Mitchell',
+    role: 'Sales Director',
+    company: 'Apex Manufacturing Ltd',
+    location: 'Birmingham',
+  },
+  {
+    quote: "Finally, an ERP solution that understands UK business requirements. The MTD integration alone saved us countless hours.",
+    author: 'James Crawford',
+    role: 'Managing Director',
+    company: 'Crawford & Partners',
+    location: 'Manchester',
+  },
+  {
+    quote: "The open-source approach means we're not locked into expensive contracts. It's flexible and grows with us.",
+    author: 'Emma Roberts',
+    role: 'Operations Manager',
+    company: 'Greenfield Distribution',
+    location: 'Leeds',
+  },
+];
+
+const stats = [
+  { value: '500+', label: 'UK Businesses' },
+  { value: '99.9%', label: 'Uptime SLA' },
+  { value: '40%', label: 'Avg. Efficiency Gain' },
+  { value: '< 2hr', label: 'Support Response' },
+];
+---
+
+<BaseLayout
+  title="Home"
+  description="dig1tal provides modern ERP and CRM solutions built for UK businesses. Streamline sales, operations, and customer relationships with our open-source platform."
+  jsonLd={jsonLd}
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          The ERP &amp; CRM Platform
+          <span class="block text-primary-600">Built for UK Businesses</span>
+        </h1>
+        <p class="mt-6 text-lg text-gray-600 sm:text-xl">
+          Streamline your sales pipeline, automate operations, and grow your business with a modern, open-source ERP solution designed for the UK market. GDPR compliant. Making Tax Digital ready.
+        </p>
+        <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a href="/contact" class="btn-primary text-lg">
+            Book a Free Demo
+          </a>
+          <a href="/features" class="btn-secondary text-lg">
+            Explore Features
+          </a>
+        </div>
+        <p class="mt-4 text-sm text-gray-500">No credit card required · Free 14-day trial · UK-based support</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="border-y border-gray-100 bg-white py-12">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+        {stats.map((stat) => (
+          <div class="text-center">
+            <p class="text-3xl font-bold text-primary-600 sm:text-4xl">{stat.value}</p>
+            <p class="mt-1 text-sm font-medium text-gray-600">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 sm:py-28" id="features">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="section-heading">Everything You Need to Run Your Business</h2>
+        <p class="section-subheading">
+          From lead generation to invoicing, dig1tal gives UK businesses a complete suite of tools to grow efficiently.
+        </p>
+      </div>
+      <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {features.map((feature) => (
+          <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+            <span class="text-3xl">{feature.icon}</span>
+            <h3 class="mt-4 text-lg font-semibold text-gray-900">{feature.title}</h3>
+            <p class="mt-2 text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <a href="/features" class="btn-secondary">See All Features →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="bg-gray-50 py-20 sm:py-28">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="section-heading">Trusted by UK Businesses</h2>
+        <p class="section-subheading">
+          See how businesses across the UK are transforming their operations with dig1tal.
+        </p>
+      </div>
+      <div class="mt-16 grid gap-8 md:grid-cols-3">
+        {testimonials.map((testimonial) => (
+          <div class="rounded-xl bg-white p-6 shadow-sm">
+            <p class="text-gray-700 italic">"{testimonial.quote}"</p>
+            <div class="mt-4 border-t border-gray-100 pt-4">
+              <p class="font-semibold text-gray-900">{testimonial.author}</p>
+              <p class="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</p>
+              <p class="text-sm text-gray-500">{testimonial.location}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <a href="/case-studies" class="btn-secondary">Read Case Studies →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-primary-700 py-16 sm:py-20">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white sm:text-4xl">
+        Ready to Transform Your Business?
+      </h2>
+      <p class="mt-4 text-lg text-primary-100">
+        Join 500+ UK businesses already using dig1tal to streamline their operations. Book a free demo with our UK-based team today.
+      </p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="/contact" class="inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-lg font-semibold text-primary-700 shadow-sm transition-all hover:bg-primary-50">
+          Book a Free Demo
+        </a>
+        <a href="/pricing" class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-3 text-lg font-semibold text-white transition-all hover:bg-primary-600">
+          View Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

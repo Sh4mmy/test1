@@ -1,0 +1,27 @@
+{
+  "name": "@dig1tal/website",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Public marketing website for dig1tal.io - ERP & CRM solutions for UK businesses",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "keywords": ["erp", "crm", "uk", "business", "saas"],
+  "author": "dig1tal",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^6.4.8",
+    "tailwindcss": "^3.4.19"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^6.4.8",
+    "tailwindcss": "^3.4.19"
+  }
+}

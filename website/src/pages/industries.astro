@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'UK ERP and CRM Industries',
+  description: 'Industry solutions for UK manufacturing, professional services, retail, construction, and SaaS businesses.',
+  url: 'https://www.dig1tal.io/industries',
+};
+
+const industries = [
+  {
+    id: 'manufacturing',
+    icon: '🏭',
+    title: 'Manufacturing',
+    description: 'Coordinate production planning, order management, customer demand, and after-sales service from one platform.',
+    benefits: ['Track quotes through to jobs and dispatch', 'Improve production visibility and customer communication', 'Reduce manual handovers between sales and operations'],
+  },
+  {
+    id: 'professional-services',
+    icon: '💼',
+    title: 'Professional Services',
+    description: 'Manage projects, billable time, account reviews, and recurring client work without juggling multiple systems.',
+    benefits: ['Link CRM opportunities to delivery projects', 'Track utilisation, milestones, and billing readiness', 'Give finance cleaner data for invoicing and reporting'],
+  },
+  {
+    id: 'retail',
+    icon: '🛒',
+    title: 'Retail & Distribution',
+    description: 'Bring inventory, account management, fulfilment, and multi-channel demand planning into a more connected process.',
+    benefits: ['Improve stock accuracy and replenishment decisions', 'Support wholesale, direct, and online channels', 'See customer demand patterns across accounts and regions'],
+  },
+  {
+    id: 'construction',
+    icon: '🏗️',
+    title: 'Construction',
+    description: 'Manage job costing, subcontractor relationships, site activity, and progress billing with clearer operational control.',
+    benefits: ['Track tenders, variations, and project profitability', 'Keep subcontractor and site communications organised', 'Reduce billing delays with better project data capture'],
+  },
+  {
+    id: 'technology-saas',
+    icon: '💻',
+    title: 'Technology & SaaS',
+    description: 'Unify subscription management, renewals, implementation workflows, and customer success activity across the revenue lifecycle.',
+    benefits: ['Monitor renewals and upsell opportunities', 'Connect onboarding, support, and commercial teams', 'Build subscription reporting and customer health views'],
+  },
+];
+---
+
+<BaseLayout
+  title="ERP & CRM for UK Industries"
+  description="See how dig1tal supports UK manufacturing, professional services, retail, construction, and SaaS firms with tailored ERP and CRM workflows."
+  jsonLd={jsonLd}
+>
+  <section class="bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-20 sm:py-24 lg:py-28">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary-600">Industry Solutions</p>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+        UK ERP &amp; CRM Software for High-Growth Industries
+      </h1>
+      <p class="section-subheading mx-auto max-w-3xl">
+        dig1tal adapts to the needs of operationally complex UK businesses, helping teams improve visibility, delivery, billing, and customer outcomes.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-8 lg:grid-cols-2">
+        {industries.map((industry) => (
+          <article id={industry.id} class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm">
+            <div class="flex items-center gap-4">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-3xl">{industry.icon}</div>
+              <h2 class="text-2xl font-semibold text-gray-900">{industry.title}</h2>
+            </div>
+            <p class="mt-5 leading-7 text-gray-600">{industry.description}</p>
+            <ul class="mt-6 space-y-3 text-gray-600">
+              {industry.benefits.map((benefit) => (
+                <li class="flex gap-3"><span class="text-primary-600">•</span><span>{benefit}</span></li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-20 sm:py-24">
+    <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="section-heading">One platform, tailored to how your sector actually works</h2>
+      <p class="section-subheading">
+        From quoting and project delivery to fulfilment and reporting, we configure dig1tal around the commercial and operational detail that matters to your team.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-primary-700 py-16 sm:py-20">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white sm:text-4xl">Discuss your industry requirements with our UK team</h2>
+      <p class="mt-4 text-lg text-primary-100">
+        Book a demo to see the workflows, dashboards, and integrations most relevant to your business model.
+      </p>
+      <div class="mt-8">
+        <a href="/contact" class="btn-primary bg-white text-primary-700 hover:bg-primary-50">Book a demo</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

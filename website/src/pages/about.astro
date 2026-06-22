@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'dig1tal',
+  url: 'https://www.dig1tal.io/about',
+  description: 'dig1tal makes enterprise-grade ERP accessible to UK SMEs with open, transparent, UK-first delivery.',
+  areaServed: 'GB',
+  knowsAbout: ['ERP', 'CRM', 'ERPNext', 'Frappe', 'UK compliance'],
+  award: ['ISO 27001', 'Cyber Essentials', 'ICO Registered'],
+};
+
+const values = [
+  {
+    title: 'Open source',
+    description: 'We believe UK businesses should benefit from flexible, extensible software without unnecessary lock-in.',
+  },
+  {
+    title: 'Transparency',
+    description: 'Clear pricing, plain-English advice, and honest implementation planning are built into how we work.',
+  },
+  {
+    title: 'UK-first',
+    description: 'From compliance and support hours to accounting integrations, we focus on what UK SMEs actually need.',
+  },
+];
+
+const timeline = [
+  {
+    year: '2019',
+    detail: 'dig1tal began with a mission to make enterprise-grade ERP and CRM more accessible for ambitious UK SMEs.',
+  },
+  {
+    year: '2021',
+    detail: 'Expanded into full ERPNext and Frappe delivery with dedicated implementation, migration, and integration services.',
+  },
+  {
+    year: '2024',
+    detail: 'Broadened support for UK accounting, reporting, and mobile-first CRM operations across multiple sectors.',
+  },
+];
+---
+
+<BaseLayout
+  title="About dig1tal ERP & CRM"
+  description="Learn about dig1tal's mission, UK team, values, certifications, and history delivering ERP and CRM solutions for UK SMEs."
+  jsonLd={jsonLd}
+>
+  <section class="bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-20 sm:py-24 lg:py-28">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary-600">About dig1tal</p>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+        Making Enterprise-Grade ERP Accessible to UK SMEs
+      </h1>
+      <p class="section-subheading">
+        We help UK businesses modernise operations with practical CRM and ERP solutions built on open technology, transparent delivery, and local expertise.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 sm:py-24">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+      <div>
+        <h2 class="section-heading">A UK team focused on operational transformation</h2>
+        <p class="section-subheading">
+          dig1tal supports UK SMEs that need stronger sales processes, better operational visibility, and more accessible ERP capability without enterprise complexity.
+        </p>
+        <p class="mt-6 leading-7 text-gray-600">
+          Our team combines CRM process design, ERP implementation experience, and a practical understanding of how finance, operations, and customer-facing teams need to work together.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-100">
+        <h2 class="text-2xl font-semibold text-gray-900">UK presence &amp; credentials</h2>
+        <ul class="mt-6 space-y-3 text-gray-600">
+          <li class="flex gap-3"><span class="text-primary-600">📍</span><span>UK-based delivery and support team</span></li>
+          <li class="flex gap-3"><span class="text-primary-600">🔐</span><span>ISO 27001 aligned security practices</span></li>
+          <li class="flex gap-3"><span class="text-primary-600">🛡️</span><span>Cyber Essentials certified approach</span></li>
+          <li class="flex gap-3"><span class="text-primary-600">📄</span><span>ICO registered for data protection accountability</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-20 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="section-heading">What we stand for</h2>
+        <p class="section-subheading">Three principles shape every implementation and customer relationship.</p>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        {values.map((value) => (
+          <article class="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-100">
+            <h3 class="text-2xl font-semibold text-gray-900">{value.title}</h3>
+            <p class="mt-4 leading-7 text-gray-600">{value.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 sm:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="section-heading">Our journey so far</h2>
+        <p class="section-subheading">A brief timeline of how dig1tal has grown with the needs of UK SMEs.</p>
+      </div>
+      <div class="mt-12 space-y-6">
+        {timeline.map((item) => (
+          <article class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:flex sm:items-start sm:gap-6">
+            <div class="text-xl font-bold text-primary-600 sm:min-w-24">{item.year}</div>
+            <p class="mt-2 leading-7 text-gray-600 sm:mt-0">{item.detail}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary-700 py-16 sm:py-20">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white sm:text-4xl">Want to work with a UK ERP & CRM partner that keeps things clear?</h2>
+      <p class="mt-4 text-lg text-primary-100">
+        Book time with our team to discuss your goals, timeline, and the systems you need to connect.
+      </p>
+      <div class="mt-8">
+        <a href="/contact" class="btn-primary bg-white text-primary-700 hover:bg-primary-50">Contact dig1tal</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
